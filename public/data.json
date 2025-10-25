@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Vintage Leather Watch",
+    "description": "A classic brown leather watch from 1980s, still in great condition.",
+    "currentBidPrice": 120.5,
+    "timeLeft": "2h 30m",
+    "bidsCount": 12,
+    "image": "https://i.ibb.co.com/cXT1KgvC/Bid1-min.png"
+  },
+  {
+    "id": 2,
+    "title": "Apple MacBook Air M2",
+    "description": "Lightweight laptop with M2 chip, 256GB SSD and 8GB RAM.",
+    "currentBidPrice": 950,
+    "timeLeft": "1d 5h",
+    "bidsCount": 27,
+    "image": "https://i.ibb.co.com/DPcf5nz9/Bid2-min.png"
+  },
+  {
+    "id": 3,
+    "title": "Mountain Bike",
+    "description": "Durable mountain bike with 21-speed gears and dual disc brakes.",
+    "currentBidPrice": 410,
+    "timeLeft": "3h 10m",
+    "bidsCount": 18,
+    "image": "https://i.ibb.co.com/xtYMKDTK/Bid3-min.png"
+  },
+  {
+    "id": 4,
+    "title": "Wireless Headphones",
+    "description": "Noise-cancelling Bluetooth headphones with 30-hour battery life.",
+    "currentBidPrice": 85,
+    "timeLeft": "5h 45m",
+    "bidsCount": 21,
+    "image": "https://i.ibb.co.com/vCmG97h8/Bid4-min.png"
+  },
+  {
+    "id": 5,
+    "title": "Antique Camera",
+    "description": "A collectible 1950s analog camera in working condition.",
+    "currentBidPrice": 250,
+    "timeLeft": "12h 20m",
+    "bidsCount": 9,
+    "image": "https://i.ibb.co.com/PzM0JfdD/Bid5-min.png"
+  },
+  {
+    "id": 6,
+    "title": "Gaming Keyboard",
+    "description": "RGB mechanical keyboard with custom switches and fast response.",
+    "currentBidPrice":  75,
+    "timeLeft": "4h 55m",
+    "bidsCount": 33,
+    "image": "https://i.ibb.co.com/7tRbWMGZ/Bid6-min.png"
+  },
+  {
+    "id": 7,
+    "title": "Electric Guitar",
+    "description": "Premium electric guitar with maple neck and glossy finish.",
+    "currentBidPrice": 540,
+    "timeLeft": "2d 3h",
+    "bidsCount": 15,
+    "image": "https://i.ibb.co.com/xqQ7ccR1/Bid7-min.png"
+  }
+]
