@@ -1,6 +1,7 @@
 import React from 'react';
 import { CiHeart } from "react-icons/ci";
-const Item = ({item,handleAdd}) => {
+import { FaHeart } from "react-icons/fa";
+const Item = ({item,handleAdd,clickedItems}) => {
     console.log(item.id)
     return (
         <div className='flex gap-4 border border-black mb-3'>
@@ -8,9 +9,24 @@ const Item = ({item,handleAdd}) => {
                 <img className='w-[80px] border-r border-r-black' src={item.image} alt="" />
                 <p className=' font-semibold text-sm'>{item.description}</p>
             </div>
-            <p className='flex justify-center items-center w-[90px] border-r border-r-black'>{item.currentBidPrice}</p>
+            <p className='flex justify-center items-center w-[90px] border-r border-r-black'> ${item.currentBidPrice}</p>
             <p className='flex justify-center items-center w-[90px] border-r border-r-black'>{item.timeLeft}</p>
-        <button onClick={()=>handleAdd(item)} className='flex justify-center items-center w-[90px]'><CiHeart size={20} /></button>
+            <button
+          key={item.id}
+          onClick={() => handleAdd(item)}
+          disabled={clickedItems.includes(item.id)}
+          className={`flex justify-center items-center w-[90px] h-[40px] rounded-md ${
+            clickedItems.includes(item.id)
+              ? "cursor-not-allowed"
+              : "color-pink"
+          }`}
+        >
+         {clickedItems.includes(item.id) ? (
+                <FaHeart size={24} color="pink" />
+            ) : (
+                <CiHeart size={24} color="gray" /> 
+            )}
+        </button>
         </div>
     );
 };

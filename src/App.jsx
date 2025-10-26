@@ -8,12 +8,35 @@ import Navbar from './Components/Navbar/Navbar'
 import { CiHeart } from "react-icons/ci";
 
 function App() {
-  const [added, setAddItem]= useState([])
+  const [added, setAddItem]= useState([]);
+  const [clickedItems, setClickedItems] = useState([]);
+  const [totalBid, setBid]=useState(0);
+
 
   const handleAdd =(item)=>{
-    setAddItem([...added,item]);
-  }
-// console.log(added)
+    if (!clickedItems.includes(item.id)) { 
+      setClickedItems([...clickedItems, item.id]); 
+      setAddItem([...added, item]); 
+      const total = totalBid + item.currentBidPrice;
+      setBid(total);
+    }
+  };
+
+  const handleRemove = (id) => {
+    const removedItem = added.find((item) => item.id === id);
+    if (!removedItem) return;
+
+    
+    const updatedAdded = added.filter((item) => item.id !== id);
+    setAddItem(updatedAdded);
+
+    const updatedClicked = clickedItems.filter((itemId) => itemId !== id);
+    setClickedItems(updatedClicked);
+
+    
+    setBid(totalBid - removedItem.currentBidPrice);
+  };
+
   return (
     <>
       <Navbar></Navbar>
@@ -25,29 +48,34 @@ function App() {
         <p className='text-gray-600'>Discover and bid on extraordinary items</p>
         <div className='flex gap-5'>
           <div className='w-2/3 mt-4'>
-            <Items handleAdd={handleAdd}></Items>
+            <Items handleAdd={handleAdd} clickedItems={clickedItems}></Items>
           </div>
           <div className='mt-4 bg-white'>
             <div className='flex items-center justify-center p-3'>
               <span><CiHeart size={30} /></span>
-              <h1 className='text-3xl'>Favourite Items</h1>
+              <h1 className=' font-bold text-3xl'>Favourite Items</h1>
             </div>
             {
               added.map((add)=>
               (
-                <div className='flex gap-2 border border-black mb-2'>
+                <div key={add.id} className='flex gap-2 border border-black mb-2'>
                   <img  className='w-[80px]' src={add.image} alt="" />
                   <div>
                     <p>{add.description}</p>
-                    <div className='flex gap-2'>
-                      <p>${add.currentBidPrice}</p>
+                    <div className='flex gap-10'>
+                      <p> ${add.currentBidPrice}</p>
                       <p>Bids : {add.bidsCount}</p>
                     </div>
+                  </div>
+                  <div className='flex items-center'>
+                    <button onClick={() => handleRemove(add.id)}
+                    className='btn text-red-500 hover:bg-red-600 hover:text-white font-bold text-sm px-2'>x</button>
                   </div>
                 </div>
               )
               )
             }
+            <h1 className='font-bold text-3xl text-center'>Total Bid : ${totalBid}</h1>
           </div>
         </div>
       </section>

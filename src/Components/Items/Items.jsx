@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Item from '../item/item';
+import Item from '../Item/Item';
 
-const Items = ({handleAdd}) => {
+const Items = ({handleAdd,clickedItems}) => {
     const [items,setItem]=useState([]);
 
     useEffect(() => {
@@ -19,7 +19,7 @@ const Items = ({handleAdd}) => {
                 <p className='w-[90px]'>Add Now</p>
             </div>
             {
-                items.map((item)=><Item key={item.id} item={item} handleAdd={handleAdd}></Item>)
+                items.map((item)=><Item key={item.id} item={item} handleAdd={handleAdd} clickedItems={clickedItems}></Item>)
             }
         </div>
     );
