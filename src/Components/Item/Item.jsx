@@ -4,13 +4,13 @@ import { FaHeart } from "react-icons/fa";
 const Item = ({item,handleAdd,clickedItems}) => {
     console.log(item.id)
     return (
-        <div className='flex gap-4 border border-black mb-3'>
-            <div className='flex gap-3 w-1/2 h-[60px] border-r border-r-black'>
-                <img className='w-[80px] border-r border-r-black' src={item.image} alt="" />
+        <div className='flex gap-4 border border-gray-300  mb-3'>
+            <div className='flex gap-3 w-1/2 h-[60px] border-r-black'>
+                <img className='w-[80px] border-r border-r-gray-300' src={item.image} alt="" />
                 <p className=' font-semibold text-sm'>{item.description}</p>
             </div>
-            <p className='flex justify-center items-center w-[90px] border-r border-r-black'> ${item.currentBidPrice}</p>
-            <p className='flex justify-center items-center w-[90px] border-r border-r-black'>{item.timeLeft}</p>
+            <p className='flex justify-center items-center w-[90px] border-r border-r-gray-300'> ${item.currentBidPrice}</p>
+            <p className='flex justify-center items-center w-[90px] border-r border-r-gray-300'>{item.timeLeft}</p>
             <button
           key={item.id}
           onClick={() => handleAdd(item)}

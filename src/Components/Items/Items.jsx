@@ -11,7 +11,7 @@ const Items = ({handleAdd,clickedItems}) => {
 }, []);
 
     return (
-        <div className='bg-white'>
+        <div className='bg-white rounded-2xl'>
             <div className='flex gap-4 font-semibold p-3'>
                 <p className=' w-1/2'>Items</p>
                 <p className='w-[90px]'>Current Bid</p>

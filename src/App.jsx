@@ -50,10 +50,10 @@ function App() {
           <div className='w-2/3 mt-4'>
             <Items handleAdd={handleAdd} clickedItems={clickedItems}></Items>
           </div>
-          <div className='mt-4 bg-white'>
-            <div className='flex items-center justify-center p-3'>
+          <div className='mt-4 bg-white rounded-2xl'>
+            <div className='flex items-center justify-center p-3 border-b border-b-gray-300'>
               <span><CiHeart size={30} /></span>
-              <h1 className=' font-bold text-3xl'>Favourite Items</h1>
+              <h1 className=' font-bold text-3xl '>Favourite Items</h1>
             </div>
             {
               added.map((add)=>
@@ -75,7 +75,7 @@ function App() {
               )
               )
             }
-            <h1 className='font-bold text-3xl text-center'>Total Bid : ${totalBid}</h1>
+            <h1 className='font-bold text-3xl text-center mt-10'>Total Bid : ${totalBid}</h1>
           </div>
         </div>
       </section>
